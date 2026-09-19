@@ -1,4 +1,4 @@
-# Zem Beauty & More — Gold & Glory V4
+# Zem Beauty & More
 
 ## Languages
 - German: `/de/`

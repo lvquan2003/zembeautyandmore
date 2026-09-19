@@ -3,12 +3,12 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { ImagePlaceholder } from "./image-placeholder";
-import { serviceImages } from "@/data/content";
+import { siteImages } from "@/data/content";
 
 const slides = [
-  { title: "Nail Design", text: "Von clean und elegant bis verspielt und individuell – dein Look wird passend zu dir gestaltet.", image: serviceImages.nailDesign },
-  { title: "Maniküre", text: "Gepflegte Hände, schöne Form und ein Finish, das sich im Alltag genauso gut anfühlt wie beim Event.", image: serviceImages.manicure },
-  { title: "Beauty", text: "Kleine Beauty-Momente für deinen persönlichen Look – modern, entspannt und mit Liebe zum Detail.", image: serviceImages.beauty },
+  { title: "Nail Design", text: "Von clean und elegant bis verspielt und individuell – dein Look wird passend zu dir gestaltet.", image: siteImages.studio },
+  { title: "Maniküre", text: "Gepflegte Hände, schöne Form und ein Finish, das sich im Alltag genauso gut anfühlt wie beim Event.", image: siteImages.hero },
+  { title: "Beauty", text: "Kleine Beauty-Momente für deinen persönlichen Look – modern, entspannt und mit Liebe zum Detail.", image: siteImages.booking },
 ];
 
 export function ServicesShowcase() {
