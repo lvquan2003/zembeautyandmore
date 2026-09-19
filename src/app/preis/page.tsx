@@ -1,0 +1,7 @@
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import { prices } from "@/data/content";
+export default function PricePage(){return <>
+<section className="bg-glory-black pt-32 text-white sm:pt-40"><div className="mx-auto w-[min(1120px,calc(100%-32px))] pb-20 sm:w-[min(1120px,calc(100%-64px))] sm:pb-28"><p className="glory-script text-5xl text-glory-gold">Preis</p><h1 className="glory-title mt-3 text-6xl sm:text-8xl">Preisliste</h1></div></section>
+<section className="glory-marble py-16 sm:py-24"><div className="mx-auto w-[min(900px,calc(100%-32px))] sm:w-[min(900px,calc(100%-64px))]">{prices.map(group=><div key={group.category} className="mb-14 bg-white/85 px-6 py-7 shadow-[0_10px_30px_rgba(50,40,30,.06)] sm:px-10"><h2 className="glory-script text-4xl text-glory-gold">{group.category}</h2><div className="mt-4 border-y border-glory-line">{group.items.map(([name,price])=><div key={name} className="flex items-center justify-between gap-5 border-b border-glory-line py-5 last:border-b-0"><span className="text-sm">{name}</span><span className="font-display text-xl text-glory-gold">{price}</span></div>)}</div></div>)}<div className="text-center"><Link href="/termin/" className="inline-flex items-center gap-2 bg-glory-black px-7 py-4 text-[10px] font-bold uppercase tracking-[.16em] text-white">Termin vereinbaren <ArrowRight size={14}/></Link></div></div></section>
+</>}

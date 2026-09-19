@@ -1,0 +1,49 @@
+import { PageHero } from "@/components/page-hero";
+import { ImagePlaceholder } from "@/components/image-placeholder";
+import { ScrollReveal } from "@/components/scroll-reveal";
+import { galleryImages } from "@/data/content";
+import { getDictionary } from "@/i18n/dictionaries";
+import type { Locale } from "@/i18n/config";
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = (await params) as any;
+  const t = getDictionary(locale as Locale);
+  return (
+    <>
+      <PageHero
+        script={t.pages.gallery.script}
+        title={t.pages.gallery.title}
+        image={galleryImages[0].src}
+        alt={galleryImages[0].alt}
+      />
+      <section className="bg-[#f8f5ef] py-16 sm:py-24">
+        <div
+          className="
+            mx-auto
+            grid
+            w-[min(1180px,calc(100%-28px))]
+            grid-cols-2
+            gap-4
+            sm:w-[min(1180px,calc(100%-48px))]
+            md:grid-cols-3
+            lg:grid-cols-4
+            "
+                    >
+          {galleryImages.map((item, index) => (
+            <ScrollReveal key={`${item.alt}-${index}`} delay={(index % 4) * 70}>
+              <ImagePlaceholder
+                src={item.src}
+                alt={item.alt}
+                label={`IMAGE ${String(index + 1).padStart(2, "0")}`}
+                className="aspect-square"
+              />
+            </ScrollReveal>
+          ))}
+        </div>
+      </section>
+    </>
+  );
+}

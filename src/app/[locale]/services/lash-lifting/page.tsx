@@ -1,0 +1,1 @@
+import ServicePage from "@/components/service-page"; import type { Locale } from "@/i18n/config"; export default async function Page({params}:{params:Promise<{locale:string}>}){const p=await params; return <ServicePage slug="lash-lifting" locale={p.locale as Locale}/>;}
